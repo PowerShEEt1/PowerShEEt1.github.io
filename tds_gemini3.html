@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpSheet | Live Job Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .sheet-container { position: relative; overflow: hidden; width: 100%; padding-top: 56.25%; /* 16:9 Aspect Ratio */ }
+        .sheet-iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body class="bg-slate-50 p-8">
+
+    <div class="max-w-6xl mx-auto space-y-12">
+        
+        <header class="text-center">
+            <h1 class="text-3xl font-bold text-slate-900">Live Upwork Feed</h1>
+            <p class="text-slate-500">Different ways to view the 'all' sheet data</p>
+        </header>
+
+        <section>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Option 1</span>
+                <h2 class="text-xl font-semibold">Clean Embed (No Chrome)</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                <iframe 
+                    src="YOUR_PUBLISHED_URL_HERE&rm=minimal&widget=false&chrome=false&headers=false" 
+                    style="width:100%; height:400px;">
+                </iframe>
+            </div>
+            <p class="mt-2 text-sm text-slate-500">Best for professional landing pages. Hides the "Google" feel.</p>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Option 2</span>
+                <h2 class="text-xl font-semibold">Native HTML View</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-4">
+                <div class="overflow-auto" style="max-height: 400px;">
+                    <iframe 
+                        src="YOUR_PUBLISHED_URL_HERE&single=true&gid=YOUR_GID_HERE&range=A1:D20" 
+                        style="width:100%; height:350px; border:none;">
+                    </iframe>
+                </div>
+            </div>
+            <p class="mt-2 text-sm text-slate-500">Fastest performance. Change <code>range=A1:D20</code> to control what they see.</p>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Option 3</span>
+                <h2 class="text-xl font-semibold">Scrollable Feed Mockup</h2>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-6 shadow-2xl">
+                <div class="flex justify-between items-center mb-4 text-white/70 text-sm">
+                    <span>Live Job Stream</span>
+                    <span class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> Live
+                    </span>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden border-4 border-slate-700">
+                    <iframe 
+                        src="YOUR_PUBLISHED_URL_HERE&rm=minimal&chrome=false" 
+                        style="width:100%; height:300px;">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="mt-20 text-center text-slate-400 text-sm pb-10">
+        <p>Pro-Tip: To get <b>instant</b> updates (sub-30 seconds), you would need to use the Google Sheets API with a custom JavaScript table, which is more complex.</p>
+    </footer>
+
+</body>
+</html>
