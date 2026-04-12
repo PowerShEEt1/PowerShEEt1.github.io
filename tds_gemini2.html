@@ -1,44 +1,127 @@
-<section class="max-w-5xl mx-auto px-8 py-20">
-        <div class="bg-slate-900 rounded-3xl p-12 text-center text-white relative overflow-hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpSheet | Instant Upwork Alerts in Google Sheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold flex items-center gap-2">
+            <div class="bg-emerald-500 text-white p-1 rounded shadow-sm">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <span>UpSheet</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-medium text-slate-600">
+            <a href="#features" class="hover:text-emerald-600 transition">Features</a>
+            <a href="https://groups.google.com/g/tdsreader/about" target="_blank" class="hover:text-emerald-600 transition">Community</a>
+        </div>
+        <a href="https://groups.google.com/g/tdsreader/about" target="_blank" class="bg-slate-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-slate-800 transition shadow-lg">Join Group</a>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-8 py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Stop refreshing. <br>
+            <span class="gradient-text">Start bidding.</span>
+        </h1>
+        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Get Upwork job notifications delivered to your <b>Google Sheets</b> in real-time. Join our beta group to get started.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="https://groups.google.com/g/tdsreader/about" target="_blank" class="bg-emerald-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-emerald-600 transition shadow-xl inline-flex items-center justify-center gap-2">
+                Join tdsreader Group <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+        </div>
+        
+        <div class="mt-16 bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 max-w-4xl mx-auto">
+            <div class="bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
+                <table class="w-full text-left text-sm">
+                    <tr class="bg-slate-200 font-bold border-b border-slate-300">
+                        <th class="p-3">Time Received</th>
+                        <th class="p-3">Job Title</th>
+                        <th class="p-3">Budget</th>
+                        <th class="p-3">Link</th>
+                    </tr>
+                    <tr class="bg-white border-b border-slate-100">
+                        <td class="p-3 text-emerald-600 font-medium">Just Now</td>
+                        <td class="p-3">React Developer needed for Fintech app</td>
+                        <td class="p-3">$5,000</td>
+                        <td class="p-3"><span class="text-blue-500 underline cursor-pointer">View Job</span></td>
+                    </tr>
+                    <tr class="bg-slate-50/50">
+                        <td class="p-3 text-slate-400">2 mins ago</td>
+                        <td class="p-3 text-slate-400">UI/UX Design for SaaS platform</td>
+                        <td class="p-3 text-slate-400">$80/hr</td>
+                        <td class="p-3 text-slate-400 underline">View Job</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 flex items-center justify-center rounded-lg text-xl mx-auto md:mx-0">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Zero Latency</h3>
+                    <p class="text-slate-500">We poll Upwork feeds constantly. You get the jobs before they even show up in most browser searches.</p>
+                </div>
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center rounded-lg text-xl mx-auto md:mx-0">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Smart Filtering</h3>
+                    <p class="text-slate-500">Only send jobs that match your specific keywords, budget range, and client history.</p>
+                </div>
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 flex items-center justify-center rounded-lg text-xl mx-auto md:mx-0">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Sheet Automation</h3>
+                    <p class="text-slate-500">Directly into Google Sheets. Use your own formulas to triage and manage your lead pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-8 py-20 text-center">
+        <div class="bg-slate-900 rounded-3xl p-12 text-white shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to win more contracts?</h2>
             <p class="text-slate-400 mb-8 max-w-lg mx-auto">
-                Join our community to get instant updates and early access via our Google Group.
+                Join our Google Group to get beta access and start receiving live job feeds today.
             </p>
-            
-            <form action="https://groups.google.com/group/tdsreader/subscribe" method="GET" class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                    type="email" 
-                    name="email" 
-                    required 
-                    placeholder="your-email@example.com" 
-                    class="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                >
-                <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-bold transition">
-                    Subscribe
-                </button>
-            </form>
-            
-            <p class="mt-4 text-xs text-slate-500">
-                Or send a blank email to: <a href="mailto:tdsreader+subscribe@googlegroups.com" class="underline text-emerald-400">tdsreader+subscribe@googlegroups.com</a>
+            <a href="https://groups.google.com/g/tdsreader/about" target="_blank" class="inline-block bg-emerald-500 hover:bg-emerald-600 px-10 py-4 rounded-xl font-bold transition text-lg shadow-lg">
+                Visit tdsreader Group
+            </a>
+            <p class="mt-6 text-sm text-slate-500 italic">
+                Membership approval is usually granted within 24 hours.
             </p>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-8 py-12">
-        <h3 class="text-center text-slate-500 uppercase tracking-widest text-sm font-bold mb-8">Recent Community Discussions</h3>
-        <iframe
-            id="forum_embed"
-            src="javascript:void(0)"
-            scrolling="no"
-            frameborder="0"
-            width="100%"
-            height="500"
-            class="rounded-2xl border border-slate-200 shadow-sm">
-        </iframe>
-        <script type="text/javascript">
-            document.getElementById('forum_embed').src =
-               'https://groups.google.com/g/tdsreader/forum/embed' +
-               '?showsearch=true&showpopout=true&showtabs=false' +
-               '&parenturl=' + encodeURIComponent(window.location.href);
-        </script>
-    </section>
+    <footer class="border-t border-slate-200 py-12 text-center text-slate-500 text-sm">
+        <div class="mb-4">
+            <a href="https://groups.google.com/g/tdsreader/about" class="mx-2 hover:text-emerald-500 transition">Group Info</a>
+            <a href="mailto:tdsreader@googlegroups.com" class="mx-2 hover:text-emerald-500 transition">Contact Support</a>
+        </div>
+        <p>&copy; 2024 UpSheet Automation. <br class="md:hidden"> Not affiliated with Upwork or Google.</p>
+    </footer>
+
+</body>
+</html>
