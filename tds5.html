@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickGig Alerts — New Upwork Jobs</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:12px; font-family:Inter,UI-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    }
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#071022 0%, #071126 60%); color:#e6eef6;}
+    /* Floating header */
+    .topbar{
+      position:fixed; top:18px; left:50%; transform:translateX(-50%);
+      width:calc(100% - 48px); max-width:1100px; padding:10px 14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow:0 8px 30px rgba(2,6,23,0.6); border-radius:14px; backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,0.03); z-index:9999;
+    }
+    /* Logo */
+    .logo{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo .mark{
+      width:44px; height:44px; border-radius:10px;
+      background:linear-gradient(135deg,var(--accent), #7c3aed);
+      display:flex; align-items:center; justify-content:center; font-weight:700; color:#012;
+      box-shadow:0 6px 18px rgba(6,182,212,0.14), 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .logo .name{font-size:16px; font-weight:600; color:#eaf6fb;}
+    .logo .tag{font-size:12px; color:var(--muted); margin-top:2px;}
+    /* Subscribe button */
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent), #7c3aed);
+      color:#011; border:none; padding:10px 14px; border-radius:10px; font-weight:700;
+      cursor:pointer; box-shadow:0 8px 24px rgba(7,128,128,0.14);
+    }
+    .ghost{
+      background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted);
+      padding:8px 12px; border-radius:10px; cursor:pointer;
+    }
+    /* Page content */
+    .wrap{max-width:1100px; margin:140px auto 80px; padding:28px; display:grid; grid-template-columns:1fr 420px; gap:28px;}
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 10px 40px rgba(2,6,23,0.6);
+    }
+    .hero h1{margin:0 0 12px; font-size:28px;}
+    .hero p{margin:0 0 18px; color:var(--muted);}
+    .features{display:grid; gap:12px; margin-top:8px;}
+    .feature{display:flex; gap:12px; align-items:flex-start; padding:12px; background:var(--glass); border-radius:10px;}
+    .ficon{width:44px; height:44px; border-radius:9px; background:rgba(255,255,255,0.03); display:grid; place-items:center; color:var(--accent); font-weight:700;}
+    /* Sidebar subscribe card */
+    .card{
+      background:linear-gradient(180deg,#071427,#061225); padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,0.03);
+    }
+    .card h3{margin:0 0 8px;}
+    .form{display:flex; gap:8px; margin-top:8px;}
+    .form input{
+      flex:1; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+      background:transparent; color:inherit; outline:none;
+    }
+    .form .send{padding:10px 14px; border-radius:10px; border:none; background:var(--accent); font-weight:700; color:#001;}
+    /* Job list */
+    .jobs{margin-top:18px; display:grid; gap:12px;}
+    .job{padding:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:10px; border:1px solid rgba(255,255,255,0.02);}
+    .job h4{margin:0 0 6px; font-size:15px;}
+    .job p{margin:0; color:var(--muted); font-size:13px;}
+    /* Footer */
+    footer{max-width:1100px; margin:40px auto; color:var(--muted); text-align:center; font-size:13px;}
+    /* Responsive */
+    @media (max-width:900px){
+      .wrap{grid-template-columns:1fr; margin-top:120px; padding:16px;}
+      .topbar{left:12px; transform:none; width:calc(100% - 24px);}
+      .logo .name{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating header -->
+  <header class="topbar" role="banner">
+    <div class="logo" aria-hidden="false">
+      <div class="mark" aria-hidden="true">QG</div>
+      <div>
+        <div class="name">QuickGig Alerts</div>
+        <div class="tag">Instant Upwork job pings</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="ghost" onclick="openSettings()">Filters</button>
+      <button class="btn" onclick="document.getElementById('email').scrollIntoView({behavior:'smooth', block:'center'})">Subscribe</button>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">New Upwork jobs — sent fast to your inbox</h1>
+      <p>Match the right gigs quickly. Get concise email alerts for roles that match your skills, hourly range, and location preferences.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="ficon">⚡</div>
+          <div>
+            <strong>Lightning delivery:</strong>
+            <div style="color:var(--muted); font-size:13px">Email sent within seconds of a matching job posting.</div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="ficon">🔎</div>
+          <div>
+            <strong>Smart matching:</strong>
+            <div style="color:var(--muted); font-size:13px">Advanced filters for skills, budget, and client rating.</div>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="ficon">🧰</div>
+          <div>
+            <strong>Easy setup:</strong>
+            <div style="color:var(--muted); font-size:13px">Subscribe in 10 seconds — stop anytime.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jobs" aria-live="polite">
+        <div class="job">
+          <h4>React developer — e-commerce site</h4>
+          <p>Fixed price • $1,500 • Posted 12s ago</p>
+        </div>
+        <div class="job">
+          <h4>Product designer — mobile app</h4>
+          <p>Hourly • $40/hr • Posted 45s ago</p>
+        </div>
+        <div class="job">
+          <h4>WordPress expert — site migration</h4>
+          <p>Fixed price • $600 • Posted 2m ago</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card" aria-labelledby="sub-title">
+      <h3 id="sub-title">Subscribe for instant job alerts</h3>
+      <p style="color:var(--muted); margin:6px 0 12px; font-size:13px">Enter your email and a short keyword (e.g., "react, node, design").</p>
+
+      <form class="form" onsubmit="event.preventDefault(); subscribe();">
+        <input id="email" type="email" placeholder="you@example.com" required aria-label="email address" />
+        <input id="keywords" type="text" placeholder="keywords (comma separated)" aria-label="keywords" />
+        <button class="send" type="submit">Get alerts</button>
+      </form>
+
+      <div id="msg" style="margin-top:12px; color:var(--muted); font-size:13px"></div>
+
+      <hr style="border:none; height:1px; background:rgba(255,255,255,0.02); margin:16px 0;">
+
+      <strong style="display:block; margin-bottom:8px;">Sample settings</strong>
+      <div style="color:var(--muted); font-size:13px">Hourly rate • Remote • English-speaking clients</div>
+    </aside>
+  </main>
+
+  <footer>
+    QuickGig Alerts — demo UI · Built for fast freelancer notifications
+  </footer>
+
+  <script>
+    // Demo interactive behaviors (replace with real backend calls)
+    function openSettings(){
+      alert('Open filter settings (demo).');
+    }
+    function subscribe(){
+      const email = document.getElementById('email').value.trim();
+      const kw = document.getElementById('keywords').value.trim();
+      if(!email){ showMsg('Please enter a valid email.'); return; }
+      showMsg('Subscribed! Check your inbox — demo only.');
+      // Mock: animate header button briefly
+      const btn = document.querySelector('.btn');
+      btn.style.transform = 'scale(0.98)';
+      setTimeout(()=> btn.style.transform = '', 220);
+      // TODO: send fetch() to your API endpoint with {email, keywords}
+    }
+    function showMsg(t){ const el = document.getElementById('msg'); el.textContent = t; }
+    // Small job feed updater (demo)
+    const demoJobs = [
+      ['Full-stack dev — marketplace','Hourly • $35/hr • Posted now'],
+      ['SEO specialist — 30-day project','Fixed • $800 • Posted 10s ago'],
+      ['Illustrator — book cover','Fixed • $300 • Posted 30s ago']
+    ];
+    let idx=0;
+    setInterval(()=>{
+      const jobs = document.querySelector('.jobs');
+      const node = document.createElement('div');
+      node.className='job';
+      node.innerHTML = '<h4>'+demoJobs[idx%demoJobs.length][0]+'</h4><p>'+demoJobs[idx%demoJobs.length][1]+'</p>';
+      jobs.prepend(node);
+      // keep max 6
+      while(jobs.children.length>6) jobs.removeChild(jobs.lastChild);
+      idx++;
+    }, 7000);
+  </script>
+</body>
+</html>
